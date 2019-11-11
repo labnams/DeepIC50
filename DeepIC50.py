@@ -37,7 +37,7 @@ toy_X, toy_y = toyset['x'], toyset['y'] # Assignment each variable of datasets
 # In[4]:
 
 
-toy_X.shape # The shape of variables 
+toy_X.shape # The shape of variables
 
 
 # In[5]:
@@ -55,7 +55,7 @@ toy_X.shape # The shape of variables after extend dimensions
 # In[7]:
 
 
-model = load_model('file_path//CNN1D.h5') # Load DeepIC50 model
+model = load_model('file_path//DeepIC50.h5') # Load DeepIC50 model
 
 
 # In[12]:
@@ -74,7 +74,7 @@ predicted_toysets_classes = np.argmax(np.round(predicted_toysets),axis=1) # Conv
 
 
 num_classes = 3 # Number of class
-predicted_toysets_categorical = keras.utils.to_categorical(predicted_toysets_classes, num_classes) # Convert class to one-hot encoding 
+predicted_toysets_categorical = keras.utils.to_categorical(predicted_toysets_classes, num_classes) # Convert class to one-hot encoding
 
 
 # In[21]:
@@ -86,7 +86,7 @@ toy_y_classes = np.argmax(toy_y,axis=1) # Convert one-hot encoding to class
 # In[22]:
 
 
-confusion_matrix(toy_y_classes, predicted_toysets_classes, labels=[0,1,2]) # Show confusion matrix 
+confusion_matrix(toy_y_classes, predicted_toysets_classes, labels=[0,1,2]) # Show confusion matrix
 
 
 # In[23]:
@@ -158,4 +158,3 @@ plt.ylabel('True Positive Rate')
 plt.title('Some extension of Receiver operating characteristic to multi-class')
 plt.legend(loc="lower right")
 plt.show()
-
